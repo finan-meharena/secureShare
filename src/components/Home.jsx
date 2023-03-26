@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react'
+import Navbar from './Navbar/Navbar'
+import Upload from './Upload/Upload'
 
 
 
 export const homeLoader = () => {
     return "Home loading"
 }
-
 
 
 const Home = () => {
@@ -23,13 +24,13 @@ const Home = () => {
 
   return (
     <>
-      <div>Home</div>
-      <div>
-        {`${demoData.name} from ${demoData.address}`}
+       <div>
+      <Navbar />
+      <Upload />
+        Home goes here..
       </div>
     </>
     
-
   )
 }
 
