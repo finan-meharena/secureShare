@@ -27,7 +27,7 @@ const Home = () => {
        <div>
       <Navbar />
       <Upload />
-        Home goes here..
+        Home Content goes here ...
       </div>
     </>
     

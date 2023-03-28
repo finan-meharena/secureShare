@@ -5,14 +5,35 @@ html{
   overflow: hidden;
 }
 
+:root {
+  --navbar-bg-color: #ffffff;
+  --navbar-text-color: #333333;
+  --navbar-text-color-active: #4e54c8;
+  --text-hover-color: #4e54c8;
+  --bg-gradient-start: #ededed;
+  --bg-gradient-mid: #e9edf2;
+  --bg-gradient-end: #e9eef7;
+}
+
 body{
-  background-color: rgb(243, 244, 246);
+  background: linear-gradient(to bottom right, var(--bg-gradient-start), var(--bg-gradient-mid), var(--bg-gradient-end));
   border-radius: 5px;
   overflow: hidden;
   
 }
 
 .App{
-  background-color: bisque;
+  background-color: rgb(217, 208, 198);
   height: 100vh;
 }
+
+
+
+
+
+
+
+
+
+
+

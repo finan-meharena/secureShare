@@ -9,11 +9,7 @@ import Home, { homeLoader } from './components/Home'
 // import 'react-icons/ai';
 
 
-
 // library imports
-
-
-
 
 
 const router = createBrowserRouter([
