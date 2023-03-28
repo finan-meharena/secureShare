@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import Footer from './Footer/Footer'
 import Navbar from './Navbar/Navbar'
 import Upload from './Upload/Upload'
 
@@ -13,14 +14,14 @@ const Home = () => {
 
   const [demoData, setDemoData] = useState([])
 
-  useEffect(() =>{
-    fetch('http://127.0.0.1:8000/demo')
-    .then(res => res.json())
-    .then(data => {
-      console.log(data)
-      setDemoData(data)
-    })
-  }, [])
+  // useEffect(() =>{
+  //   fetch('http://127.0.0.1:8000/demo')
+  //   .then(res => res.json())
+  //   .then(data => {
+  //     console.log(data)
+  //     setDemoData(data)
+  //   })
+  // }, [])
 
   return (
     <>
@@ -28,6 +29,7 @@ const Home = () => {
       <Navbar />
       <Upload />
         Home Content goes here ...
+      <Footer />
       </div>
     </>
     

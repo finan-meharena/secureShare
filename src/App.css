@@ -1,8 +1,10 @@
 
 html{
-  border: 7px solid black;
   height: 100vh;
-  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
 }
 
 :root {
@@ -16,14 +18,11 @@ html{
 }
 
 body{
-  background: linear-gradient(to bottom right, var(--bg-gradient-start), var(--bg-gradient-mid), var(--bg-gradient-end));
-  border-radius: 5px;
-  overflow: hidden;
-  
+  background-color: aliceblue;
 }
 
 .App{
-  background-color: rgb(217, 208, 198);
+  background-color: rgb(255, 255, 255);
   height: 100vh;
 }
 

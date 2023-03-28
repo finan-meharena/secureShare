@@ -1,35 +1,27 @@
-import React, { useRef } from "react";
+import React from "react";
 
-import { BeakerIcon } from "@heroicons/react/24/solid";
-
+// styles
 import "./Upload.css";
 
-import {
-  AiFillPlusCircle,
-  AiFillRightCircle,
-  AiOutlinePlus,
-} from "react-icons/ai";
+
+// libraries 
+import { toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
+
+
 
 export default function Upload() {
 
+  
   function handleFileSubmission(event) {
     return document.getElementById("fileID").click();
   }
 
   function handleSelectedFile(event){
-    alert(`${event.target.files[0].name} is selected`)
+    toast.success(`${event.target.files[0].name} is selected`)
   }
 
 
-  const toast = useRef(null);
-
-  const onUpload = () => {
-    toast.current.show({
-      severity: "info",
-      summary: "Success",
-      detail: "File Uploaded",
-    });
-  };
 
   return (
     <div className="container">
