@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from 'react'
+import { cookies } from '../pages/Login'
 import Footer from './Footer/Footer'
 import Navbar from './Navbar/Navbar'
 import Upload from './Upload/Upload'
+
+// styles 
 
 
 
@@ -14,6 +17,10 @@ const Home = () => {
 
   const [demoData, setDemoData] = useState([])
 
+  function deleteToken(){
+    cookies.remove("auth-token")
+}
+
   // useEffect(() =>{
   //   fetch('http://127.0.0.1:8000/demo')
   //   .then(res => res.json())
@@ -25,9 +32,14 @@ const Home = () => {
 
   return (
     <>
-       <div>
+      <div className='home'>
       <Navbar />
       <Upload />
+      <button  className="delete" onClick={deleteToken}>
+          <a className="fab fa-google-plus-g">
+            Delete Token(Demo)
+          </a>
+        </button>
         Home Content goes here ...
       <Footer />
       </div>

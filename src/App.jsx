@@ -1,10 +1,10 @@
-import { useState } from 'react'
 import { IconBase } from 'react-icons'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { ToastContainer } from 'react-toastify'
 import './App.css'
 import Error from './components/Error'
 import Home, { homeLoader } from './components/Home'
+import Login, { loginLoader } from './pages/Login'
 
 // import 'react-icons/ai';
 
@@ -15,6 +15,12 @@ import Home, { homeLoader } from './components/Home'
 const router = createBrowserRouter([
   {
     path: "/",
+    element : <Login />,
+    loader : loginLoader,
+    errorElement : <Error />
+  }, 
+  {
+    path : "home/",
     element : <Home />,
     loader : homeLoader,
     errorElement : <Error />
@@ -23,9 +29,10 @@ const router = createBrowserRouter([
 
 function App() {
 
+
   
   return (
-    <div className='App'>
+    <div className='app'>
       <RouterProvider router={router} ></RouterProvider>
       <ToastContainer></ToastContainer>
       <IconBase></IconBase>

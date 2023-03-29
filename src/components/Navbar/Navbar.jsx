@@ -6,9 +6,9 @@ const Navbar = () => {
 
   const navItems = ["Request Mine", "Mine", "ReSync", "History" ]
 
-  const  navElemets = navItems.map(nav => (
-    <div className='nav-item'>
-      <a key={nav} href="#" > {nav} </a>
+  const  navElemets = navItems.map((nav, index) => (
+    <div className='nav-item' key={index}>
+      <a key={index} href="#" > {nav} </a>
     </div>
   ))
   return (

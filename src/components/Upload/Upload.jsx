@@ -21,7 +21,7 @@ export default function Upload() {
     toast.success(`${event.target.files[0].name} is selected`)
   }
 
-
+  
 
   return (
     <div className="container">

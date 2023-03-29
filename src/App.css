@@ -18,12 +18,12 @@ html{
 }
 
 body{
-  background-color: aliceblue;
+  background-color: rgb(161, 204, 243);
 }
 
-.App{
-  background-color: rgb(255, 255, 255);
-  height: 100vh;
+.app{
+  background-color: transparent;
+
 }
 
 

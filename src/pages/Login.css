@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300');
+
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
+
+html{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    max-height: 350px;
+}
+
+:root{
+  --bg-linear-gradient : linear-gradient(to right, #5dbdba 0%, #3d99be 31%, #56317a 100%);
+  --login-linear-gradient : linear-gradient(to right, #e1bbeb 0%, #3d99be 31%, #56317a 100%);
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+body .login-page{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: var(--bg-linear-gradient);
+  margin-left: 25%;
+  margin-right: 25%;
+  background-position:center;
+  padding-top: 25px;
+  padding-bottom: 30px;
+  
+}
+
+body .login-page{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    /* background-color: var(--login-linear-gradient) ; */
+    border-radius: 7px;
+    margin-top: 5%;
+
+
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position:relative;
+  box-shadow:1px 1px 10px 1px rgb(194, 159, 159);
+  padding:50px;
+  text-align:center;
+  height: 250px;
+  width: 400px;
+}
+
+h2 {
+    margin-bottom: 55px;
+    animation:  fadeInUp 2s ease;
+    transition: all 2s ease;
+}
+button {
+  width:300px;
+  height:50px;
+  display:inline-block;
+  border-radius:77px;
+  font-family:arial;
+  font-size:13px;
+  font-style:bold;
+  color:rgb(188, 188, 188);
+  border:none;
+  cursor: pointer;
+  animation:  fadeInUp 2s ease;
+  transition: all 2s ease;
+  
+}
+
+button:hover{
+  color: rgb(255, 255, 255);
+  font-weight: 400;
+}
+#g {
+  background:#3c6bda;
+}
+#f {
+  background:#2153b7;
+}
+
+
+.delete{
+background-color: red;
+}
+
+.login-logo{
+  width: 150px;
+  height: 120px;
+  margin-bottom: 3%;
+  border-radius: 30%;
+  border-style: none;
+  box-shadow: 0 0 10px 5px rgb(170, 170, 249);
+}
