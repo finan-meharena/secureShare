@@ -1,13 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:300');
-
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
 
-html{
+/* html{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     max-height: 350px;
-}
+} */
 
 :root{
   --bg-linear-gradient : linear-gradient(to right, #5dbdba 0%, #3d99be 31%, #56317a 100%);
@@ -32,11 +31,13 @@ body .login-page{
   justify-content: center;
   align-items: center;
   background-image: var(--bg-linear-gradient);
-  margin-left: 25%;
-  margin-right: 25%;
+  margin-left: 30%;
+  margin-right: 30%;
   background-position:center;
   padding-top: 25px;
   padding-bottom: 30px;
+  overflow: hidden;
+
   
 }
 
@@ -52,18 +53,18 @@ body .login-page{
 
 }
 
-.body {
+  .body {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   position:relative;
-  box-shadow:1px 1px 10px 1px rgb(194, 159, 159);
+  box-shadow:1px 1px 3px 1px rgb(194, 159, 159);
   padding:50px;
   text-align:center;
   height: 250px;
   width: 400px;
-}
+  border-bottom: 0px inherit;}
 
 h2 {
     margin-bottom: 55px;
@@ -81,22 +82,53 @@ button {
   color:rgb(188, 188, 188);
   border:none;
   cursor: pointer;
-  animation:  fadeInUp 2s ease;
-  transition: all 2s ease;
+  animation:  fadeInUp 1.5s ease;
+  transition: all 1.5s ease;
   
 }
 
 button:hover{
-  color: rgb(255, 255, 255);
+  /* color: rgb(255, 255, 255); */
   font-weight: 400;
 }
-#g {
-  background:#3c6bda;
-}
-#f {
-  background:#2153b7;
+
+.login-options{
+  margin-bottom: 5%;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  
 }
 
+.login-options .option:hover{
+    box-shadow: 1px 1px 3px 1px rgb(194, 159, 159);
+}
+
+
+.google {
+  background:#c6c6c6;
+  font-size: 16px;
+  color: black;
+  transition: all 0.5s ease;
+
+}
+.facebook {
+  background:#2153b7;
+  font-size: 16px;
+  transition: all 0.5s ease;
+}
+
+.github{
+  background-color: #3c3d3f;
+  font-size: 16px;
+  transition: all 0.5s ease;
+}
+
+.login-options .option-icon{
+  margin-right: 2%; 
+  padding: 3px;
+}
 
 .delete{
 background-color: red;

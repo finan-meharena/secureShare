@@ -18,7 +18,7 @@ export default function Upload() {
   }
 
   function handleSelectedFile(event){
-    toast.success(`${event.target.files[0].name} is selected`)
+    toast.success(`${event.target.files[0].name} is selected`, { style: { whiteSpace: 'nowrap' } })
   }
 
   
