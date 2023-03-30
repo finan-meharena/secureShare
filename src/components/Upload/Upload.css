@@ -44,8 +44,9 @@
 }
 
 .drop_box {
+  background-color: aliceblue;
   margin: 10px 0;
-  padding-bottom: 15px;
+  padding: 15px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -76,7 +77,10 @@
   border: none;
   outline: none;
   transition: 0.3s;
+  border-radius: 10px;
 }
+
+
 
 .btn:hover{
   text-decoration: none;
@@ -95,4 +99,11 @@
   outline: none;
   padding: 12px 20px;
   border-radius: 4px;
+}
+
+.confirm-upload{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

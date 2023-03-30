@@ -6,6 +6,7 @@ import './App.css'
 import Error from './components/Error'
 import Home, { homeLoader } from './components/Home'
 import Login, { loginLoader } from './pages/Login'
+import PageNotFound from './pages/pageNotFound/PageNotFound'
 
 // import 'react-icons/ai';
 
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
     element : <Home />,
     loader : homeLoader,
     errorElement : <Error />
+  }, 
+  {
+    path : "*",
+    element : <PageNotFound />
   }
 ])
 

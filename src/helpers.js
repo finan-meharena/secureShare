@@ -21,3 +21,23 @@ export const deleteToken = () =>{
 
 
 
+// upload fiel to firebse store 
+
+
+
+  //     // Upload file to Firebase Storage
+//     const storageRef = firebase.storage().ref();
+//     const fileRef = storageRef.child(file.name);
+//     await fileRef.put(file);
+
+//     // Save file metadata to Firestore
+//     const db = firebase.firestore();
+//     const docRef = db.collection('files').doc(file.name);
+//     await docRef.set({
+//       name: file.name,
+//       url: await fileRef.getDownloadURL(),
+//       createdAt: new Date(),
+//     });
+
+
+

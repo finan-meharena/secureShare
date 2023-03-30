@@ -21,11 +21,11 @@ export const cookies = new Cookies();
 
 const Login = () => {
 
-  const navigate = useNavigate()
-
   if (cookies.get("auth-token")) {
     return <Home />;
   }
+
+  const navigate = useNavigate()
 
   const linkRef = useRef();
 
