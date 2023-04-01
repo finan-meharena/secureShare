@@ -1,38 +1,68 @@
 import React, { useState } from "react";
 
+// Firebase
+import { database, storage } from "../../firebase/firebase-config"; // import the Firebase storage instance
 
 // styles
 import "./Upload.css";
 
-// libraries 
+// libraries
 import { toast } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
+import "react-toastify/dist/ReactToastify.css";
+import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
+import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 
 export default function Upload() {
+  const [file, setFile] = useState(null);
+  const [progress, setProgress] = useState(0);
 
-  const [file, setFile] = useState({
-    name : null, 
-  })
-  
   function triggerFileSelection(event) {
     return document.getElementById("fileID").click();
   }
 
-  function handleSelectedFile(event){
-    let file = event.target.files[0]
-    console.log(file)
-    setFile(prevFile => {
-      return {...prevFile, name : file.name}
-    })
-    // toast.success(`${event.target.files[0].name} is selected`, { style: { whiteSpace: 'nowrap' } })
+  function handleSelectedFile(event) {
+    let file = event.target.files[0];
+    setFile(file);
   }
 
-  function handleFile(){
-    toast.success(`${file.name} is sent for mining!`)
-    setFile(prevFile => ({...prevFile, name : null}))
-    // code to send fiel to some cloud storages goes here ... 
+  async function handleFile() {
+    // Create a reference to the file in Firebase Storage
+    const storageRef = ref(storage, `files/${file.name}`);
+
+    // Upload the file to Firebase Storage
+    const uploadTask = uploadBytesResumable(storageRef, file);
+
+    // Listen for state changes, errors, and completion of the upload.
+    uploadTask.on(
+      "state_changed",
+      (snapshot) => {
+        // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
+        const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+        setProgress(progress);
+      },
+      (error) => {
+        console.error(error);
+        toast.error("An error occurred while uploading the file");
+      },
+      async () => {
+        // Upload completed successfully, now we can get the download URL
+        const downloadURL = await getDownloadURL(storageRef);
+
+        // Save the download URL to Firestore
+        const docRef = await addDoc(collection(database, "files"), {
+          name: file.name,
+          url: downloadURL,
+          createdAt: serverTimestamp(),
+        });
+
+        toast.success(`${file.name} is uploaded successfully!`);
+
+        setFile(null);
+        setProgress(0);
+      }
+    );
   }
-  
+
   return (
     <div className="container">
       <div className="card">
@@ -45,84 +75,22 @@ export default function Upload() {
             style={{ display: "none" }}
             onChange={(event) => handleSelectedFile(event)}
           />
-          {!file.name ? (
-                      <button className="btn" onClick={triggerFileSelection}>
-                      Choose File
-                    </button>
+          {!file ? (
+            <button className="btn" onClick={triggerFileSelection}>
+              Choose File
+            </button>
           ) : (
             <div className="confirm-upload">
-              <p> {` ${file.name} is selected ✅`} </p>
-              <button className="btn" onClick={handleFile}>Upload</button>
+              <p>{` ${file.name} is selected ✅`}</p>
+              <progress value={progress} max="100" color="green" />
+              <button className="btn" onClick={handleFile}>
+                Upload
+              </button>
             </div>
           )}
           <p>Files Supported: PDF, TEXT, DOC , DOCX</p>
         </div>
       </div>
     </div>
-
   );
 }
-
-
-{/* <form onSubmit={handleSubmit}>
-<label>
-  Select a file:
-  <input type="file" onChange={handleFileUpload} />
-</label>
-<br />
-<button type="submit" disabled={!file}>
-  Upload
-</button>
-</form> */}
-
-
-
-// import React, { useState } from 'react';
-// import firebase from 'firebase/app';
-// import 'firebase/storage';
-
-// const Form = () => {
-//   const [file, setFile] = useState(null);
-
-//   // Handle file upload
-//   const handleFileUpload = (e) => {
-//     setFile(e.target.files[0]);
-//   };
-
-//   // Handle form submission
-//   const handleSubmit = async (e) => {
-//     e.preventDefault();
-
-//     // Upload file to Firebase Storage
-//     const storageRef = firebase.storage().ref();
-//     const fileRef = storageRef.child(file.name);
-//     await fileRef.put(file);
-
-//     // Save file metadata to Firestore
-//     const db = firebase.firestore();
-//     const docRef = db.collection('files').doc(file.name);
-//     await docRef.set({
-//       name: file.name,
-//       url: await fileRef.getDownloadURL(),
-//       createdAt: new Date(),
-//     });
-
-//     alert('File uploaded successfully!');
-//   };
-
-//   return (
-//     <form onSubmit={handleSubmit}>
-//       <label>
-//         Select a file:
-//         <input type="file" onChange={handleFileUpload} />
-//       </label>
-//       <br />
-//       <button type="submit" disabled={!file}>
-//         Upload
-//       </button>
-//     </form>
-//   );
-// };
-
-// export default Form;
-

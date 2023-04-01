@@ -107,3 +107,18 @@
   justify-content: center;
   align-items: center;
 }
+
+.progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: #ddd;
+  z-index: 9999;
+  transition: transform 0.3s ease-in-out;
+}
+
+.progress-bar.hidden {
+  transform: translateY(-100%);
+}
