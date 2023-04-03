@@ -69,24 +69,21 @@
   color: #a3a3a3;
 }
 
-.btn {
+.my-btn {
   text-decoration: none;
   background-color: #005af0;
   color: #ffffff;
-  padding: 10px 20px;
+  padding: 7px 20px;
   border: none;
   outline: none;
   transition: 0.3s;
   border-radius: 10px;
 }
 
-
-
-.btn:hover{
+.my-btn:hover{
   text-decoration: none;
   background-color: #ffffff;
   color: #005af0;
-  padding: 10px 20px;
   border: none;
   outline: 1px solid #010101;
   cursor: pointer;

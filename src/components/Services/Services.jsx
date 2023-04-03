@@ -7,8 +7,6 @@ import { servicesList } from "../../helpers";
 
 
 const Services = () => {
-
-    const services = [{servIcon : "icon", servHeader : "Header", servText : "Text" }]
   return (
     <div classNameName="service-container">
         <section className="services section-bg" id="services">

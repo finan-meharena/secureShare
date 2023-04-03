@@ -135,14 +135,14 @@ export default function Upload() {
             onChange={(event) => handleSelectedFile(event)}
           />
           {!file ? (
-            <button className="btn" onClick={triggerFileSelection}>
+            <button className="my-btn" onClick={triggerFileSelection}>
               Choose File
             </button>
           ) : (
             <div className="confirm-upload">
               <p>{` ${file.name} is selected ✅`}</p>
               <progress value={progress} max="100" color="green" />
-              <button className="btn" onClick={handleFile}>
+              <button className="my-btn" onClick={handleFile}>
                 Upload
               </button>
             </div>

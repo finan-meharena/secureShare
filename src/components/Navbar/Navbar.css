@@ -7,11 +7,11 @@
     --text-hover-color: #4e54c8;
   }
 
-a{
+.my-nav-link{
     text-decoration: none;
-    color: inherit;
+    color: rgb(62, 61, 61);
+    transition: all 0.3s ease;
 }
-
 
 /* animations  */
 
@@ -26,7 +26,7 @@ a{
     }
   }
 
-.nav-container{
+.my-nav-container{
     height: 100px ;
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
@@ -70,10 +70,8 @@ a{
     transition: all 0.4s ease-in-out;
 }
 
-.nav-item:hover{
-    border-color: rgb(253, 76, 76);
-    border-bottom-width: 3px;
-    
+.my-nav-link:hover{
+    color: black;
 }
 
 .logo-container{
@@ -104,15 +102,12 @@ img{
 }
 
 .logout{
-    color: rgb(142, 19, 19);
+    color: rgb(94, 61, 61);
     margin-right: 10px;
     transition: all 1s;
+    text-decoration: none;
 }
 
 .logout:hover{
-    /* color: rgb(243, 53, 53); */
-    font-weight: 500;
-    /* background-color: rgb(230, 137, 137); */
-    border-radius: 10px;
-    border-bottom: none;
+    color: red;
 }
