@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@heroicons/react": "^2.0.16",
+    "bootstrap": "^5.2.3",
     "firebase": "^9.19.1",
     "primeicons": "^6.0.1",
     "primereact": "^9.2.1",

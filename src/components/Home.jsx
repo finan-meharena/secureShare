@@ -6,6 +6,7 @@ import Login, { cookies } from '../pages/Login'
 import Footer from './Footer/Footer'
 import Navbar from './Navbar/Navbar'
 import Upload from './Upload/Upload'
+import Services from './Services/Services'
 
 // styles 
 
@@ -36,7 +37,7 @@ const Home = () => {
       <div className='home'>
       <Navbar />
       <Upload />
-        Home Content goes here ...
+      <Services />
       <Footer />
       </div>
     </>
