@@ -20,6 +20,13 @@ export const deleteToken = () =>{
 }
 
 
+// upload file helpers 
+
+export function triggerFileSelection(event) {
+  return document.getElementById("fileID").click();
+}
+
+
 
 // upload fiel to firebse store 
 
