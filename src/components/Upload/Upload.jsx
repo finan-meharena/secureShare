@@ -140,7 +140,7 @@ export default function Upload() {
             </button>
           ) : (
             <div className="confirm-upload">
-              <p>{` ${file.name} is selected ✅`}</p>
+              <p>{` ${file.name.substring(0,10)}... is selected ✅`}</p>
               <progress value={progress} max="100" color="green" />
               <button className="my-btn" onClick={handleFile}>
                 Upload

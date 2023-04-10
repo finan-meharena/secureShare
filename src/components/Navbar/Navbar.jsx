@@ -6,21 +6,21 @@ import { deleteToken } from "../../helpers";
 
 const Navbar = () => {
 
-  const navItems = ["Request Mine", "Mine", "ReSync", "History"];
+  const navItems = ["Lorem", "Mine", "ReSync", "History"];
   const navElemets = navItems.map((nav, index) => (
     <div key={index} className="nav-item" >
-      <a className="my-nav-link"  href="#">
+      <Link className="my-nav-link"  to={nav === 'Mine' ? "/pending" : ""}>
         {nav}
-      </a>
+      </Link>
     </div>
   ));
 
   return (
     <div className="my-nav-container">
       <div className="logo-container">
-        <a href="" className="logo">
+        <Link to="/home" className="logo">
           <img src={logo} alt="logo" />
-        </a>
+        </Link>
       </div>
       <div className="nav-items">
         {navElemets}
@@ -29,8 +29,6 @@ const Navbar = () => {
             Logout
           </Link>
         </div>
-
-
       </div>
     </div>
   );

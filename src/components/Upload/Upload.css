@@ -119,3 +119,8 @@
 .progress-bar.hidden {
   transform: translateY(-100%);
 }
+
+.file-name{
+  font-size: 17px;
+  animation: none;
+}

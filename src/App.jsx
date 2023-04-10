@@ -7,6 +7,7 @@ import Error from './components/Error'
 import Home, { homeLoader } from './components/Home'
 import Login, { loginLoader } from './pages/Login'
 import PageNotFound from './pages/pageNotFound/PageNotFound'
+import Pending, { pendingLoader } from './pages/pendingTransactions/Pending'
 
 // import 'react-icons/ai';
 
@@ -22,11 +23,16 @@ const router = createBrowserRouter([
     errorElement : <Error />
   }, 
   {
-    path : "home/",
+    path : "/home",
     element : <Home />,
     loader : homeLoader,
     errorElement : <Error />
-  }, 
+  },
+  {
+    path : "/pending",
+    element : <Pending />,
+    loader : pendingLoader
+  },
   {
     path : "*",
     element : <PageNotFound />
