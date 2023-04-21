@@ -19,6 +19,7 @@ import { database, storage } from "../../firebase/firebase-config"; // import th
 
 // helpers
 import { triggerFileSelection } from "../../helpers";
+import { json } from "react-router-dom";
 
 export default function Upload() {
   const [file, setFile] = useState(null);
@@ -91,7 +92,8 @@ export default function Upload() {
 
         const doc = {
           name : file.name, 
-          url :downloadURL
+          url :downloadURL,
+          user_name : JSON.parse(localStorage.getItem("user-name"))
         }
         setDoc(doc)
         toast.success(`${file.name} is uploaded successfully!`);

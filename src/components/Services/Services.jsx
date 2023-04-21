@@ -8,7 +8,7 @@ import { servicesList } from "../../helpers";
 
 const Services = () => {
   return (
-    <div classNameName="service-container">
+    <div className="service-container">
         <section className="services section-bg" id="services">
   <div className="inner-container">
     <header className="section-header">
@@ -19,8 +19,8 @@ const Services = () => {
       </p>
     </header>
     <div className="row">
-        {servicesList.map(serv => (
-            <div className="col-md-6 col-lg-4">
+        {servicesList.map((serv, index) => (
+            <div key={index} className="col-md-6 col-lg-4">
             <div className="box">
               <div className="icon" style={{ background: "#000" }}>
                 <i

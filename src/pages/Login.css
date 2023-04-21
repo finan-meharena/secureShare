@@ -66,10 +66,18 @@ body .login-page{
   width: 400px;
   border-bottom: 0px inherit;}
 
-h2 {
+/* .login-page h2 {
     margin-bottom: 55px;
     animation:  fadeInUp 2s ease;
     transition: all 2s ease;
+} */
+
+.sign-in-header{
+  font-size: large;
+  margin-top: 10%;
+  margin-bottom: 0;
+  animation:  fadeInUp 2s ease;
+  transition: all 2s ease;
 }
 .option {
   width:300px;
@@ -103,6 +111,10 @@ button:hover{
 
 .login-options .option:hover{
     box-shadow: 1px 1px 3px 1px rgb(194, 159, 159);
+}
+
+.sign-in-link{
+  text-decoration: none;
 }
 
 
