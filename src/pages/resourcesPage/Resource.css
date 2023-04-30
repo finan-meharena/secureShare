@@ -1,0 +1,46 @@
+/* .resource-container{
+
+} */
+
+.table-container{
+    background-color: bisque;
+    display: flex;
+    justify-content: space-around;
+}
+
+.my-table{
+    background-color: aliceblue;
+    padding: 3%;
+}
+
+.my-table .table-header{
+    font-size: large;
+    font-weight: 800;
+    text-align: center;
+    padding: 2%;
+}
+
+.header-underline{
+    border-bottom: 2px solid grey;
+    margin-bottom: 5px;
+}
+
+.my-table th{
+    text-align: left;
+    width: 150px;
+}
+
+.my-table td{
+    text-align: left;
+}
+
+
+
+
+  
+  
+  
+  
+  
+  
+
