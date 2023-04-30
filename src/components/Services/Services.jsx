@@ -12,10 +12,9 @@ const Services = () => {
         <section className="services section-bg" id="services">
   <div className="inner-container">
     <header className="section-header">
-      <h3>Services</h3>
+      <h3>Why SecureShare ?</h3>
       <p>
-        Laudem latine persequeris id sed, ex fabulas delectus quo. No vel
-        partiendo abhorreant vituperatoribus.
+        SecureShare makes use of blockchain to securely store and share files.
       </p>
     </header>
     <div className="row">

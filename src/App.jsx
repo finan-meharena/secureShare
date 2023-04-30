@@ -8,6 +8,7 @@ import Home, { homeLoader } from './components/Home'
 import Login, { loginLoader } from './pages/Login'
 import PageNotFound from './pages/pageNotFound/PageNotFound'
 import Pending, { pendingLoader } from './pages/pendingTransactions/Pending'
+import Resource from './pages/resourcesPage/Resource'
 
 // import 'react-icons/ai';
 
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
     path : "/pending",
     element : <Pending />,
     loader : pendingLoader
+  },
+  {
+    path : "/resource",
+    element : <Resource />
   },
   {
     path : "*",

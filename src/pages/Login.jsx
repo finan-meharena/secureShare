@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import Cookies from "universal-cookie";
 import { FaFacebook, FaGithub, FaGoogle } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
@@ -22,12 +22,39 @@ export const cookies = new Cookies();
 
 const Login = () => {
   const navigate = useNavigate();
+  const [optEmail, setOptEmail] = useState(false);
 
   if (cookies.get("auth-token")) {
     return <Home />;
   }
 
   const linkRef = useRef();
+
+  function handleEmailOption() {
+    setOptEmail((val) => !val);
+  }
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleEmailChange = (event) => {
+    setEmail(event.target.value);
+  };
+
+  const handlePasswordChange = (event) => {
+    setPassword(event.target.value);
+  };
+
+  function loginUsingEmail() {
+    if(email && password){
+      toast.success("Welcome , Finan!")
+      navigate("/home");
+    } else{
+      toast.error("Email or Password is incorrect")
+    }
+
+    
+  }
 
   const signInwithGoogle = async () => {
     try {
@@ -48,9 +75,6 @@ const Login = () => {
       //   email: currentUser.email,
       //   userId: currentUser.uid,
       // });
-
-
-
     } catch (err) {
       console.log(err);
     }
@@ -67,18 +91,44 @@ const Login = () => {
       <div className="body">
         <h2 className="sign-in-header">Please Sign-In.</h2>
         <div className="login-options">
-          <button className="google option" onClick={signInwithGoogle}>
-            <Link className="sign-in-link">
-              <span className="option-icon">
-                {" "}
-                <FcGoogle />{" "}
-              </span>{" "}
-              Sign in with Google
-            </Link>
-            <Link ref={linkRef} to="/home" hidden></Link>
-          </button>
+          {!optEmail ? (
+            <button className="google option" onClick={signInwithGoogle}>
+              <Link className="sign-in-link">
+                <span className="option-icon">
+                  {" "}
+                  <FcGoogle />{" "}
+                </span>{" "}
+                Sign in with Google
+              </Link>
+              <Link ref={linkRef} to="/home" hidden></Link>
+            </button>
+          ) : (
+            <form className="email-login-container">
+              <input
+                className="email-input"
+                type="email"
+                placeholder="Email..."
+                required
+                value={email}
+                onChange={handleEmailChange}
+              />
+              <input
+                className="password-input"
+                type="password"
+                placeholder="Password"
+                required
+                value={password}
+                onChange={handlePasswordChange}
+              />
 
-          <button className="facebook option">
+              <div className="login-button">
+                <button  type="button" onClick={() => loginUsingEmail()} >Log In</button>
+              </div>
+            </form>
+          )}
+
+
+          {/* <button className="facebook option">
             <Link className="sign-in-link">
               <span className="option-icon">
                 {" "}
@@ -86,8 +136,8 @@ const Login = () => {
               </span>{" "}
               Sign in with Facebook
             </Link>
-          </button>
-
+          </button> */}
+          {/* 
           <button className="github option">
             <Link className="sign-in-link">
               <span className="option-icon">
@@ -96,7 +146,12 @@ const Login = () => {
               </span>{" "}
               Sign in with GitHub
             </Link>
-          </button>
+          </button> */}
+          <div className="login-with-email">
+            <a className="email-option" onClick={() => handleEmailOption()}>
+              Other login options ?
+            </a>
+          </div>
         </div>
       </div>
     </div>

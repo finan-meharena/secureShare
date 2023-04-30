@@ -31,6 +31,10 @@ export default function Upload() {
     setFile(file);
   }
 
+  function removeFile(){
+    setFile(null)
+  }
+
   // async function listFiles() {
   //   // Create a reference to the "files" folder
   //   const listRef = ref(storage, "files");
@@ -91,11 +95,11 @@ export default function Upload() {
         });
 
         const doc = {
-          name : file.name, 
-          url :downloadURL,
-          user_name : JSON.parse(localStorage.getItem("user-name"))
-        }
-        setDoc(doc)
+          name: file.name,
+          url: downloadURL,
+          user_name: JSON.parse(localStorage.getItem("user-name")),
+        };
+        setDoc(doc);
         toast.success(`${file.name} is uploaded successfully!`);
         setFile(null);
         setProgress(0);
@@ -104,21 +108,21 @@ export default function Upload() {
   }
 
   useEffect(() => {
-  if(doc){
-        fetch("http://localhost:8800/upload-file", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(doc),
-    })
-      .then((response) => response.json())
-      .then((data) => console.log(data))
-      .catch((error) => console.error(error));
+    if (doc) {
+      fetch("http://localhost:8800/upload-file", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(doc),
+      })
+        .then((response) => response.json())
+        .then((data) => console.log(data))
+        .catch((error) => console.error(error));
 
-      setDoc(null)
-  }
-    
+      setDoc(null);
+    }
+
   }, [doc]);
 
   return (
@@ -142,11 +146,16 @@ export default function Upload() {
             </button>
           ) : (
             <div className="confirm-upload">
-              <p>{` ${file.name.substring(0,10)}... is selected ✅`}</p>
+              <p>{` ${file.name.substring(0, 10)}... is selected ✅`}</p>
               <progress value={progress} max="100" color="green" />
+              <div className="upload-options">
               <button className="my-btn" onClick={handleFile}>
                 Upload
               </button>
+              <button className="my-btn cancel" onClick={removeFile}>
+                Cancel
+              </button>
+              </div>
             </div>
           )}
           <p>Files Supported: PDF, TEXT, DOC , DOCX</p>

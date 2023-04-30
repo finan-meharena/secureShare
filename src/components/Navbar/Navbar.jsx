@@ -6,10 +6,11 @@ import { deleteToken } from "../../helpers";
 
 const Navbar = () => {
 
-  const navItems = ["Lorem", "Mine", "ReSync", "Chain"];
+  const navItems = ["Mine", "ReSync", "Resource"];
   const navElemets = navItems.map((nav, index) => (
     <div key={index} className="nav-item" >
-      <Link className="my-nav-link"  to={nav === 'Mine' ? "/pending" : ""}>
+
+      <Link className="my-nav-link"  to={nav === 'Mine' ? "/pending" : "/resource"}>
         {nav}
       </Link>
     </div>

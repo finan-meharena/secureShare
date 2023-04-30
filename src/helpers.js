@@ -24,12 +24,12 @@ export function triggerFileSelection(event) {
 }
 
 export const servicesList = [
-  { servIconClass: "fa fa-briefcase service-icon", servHeader: "Header", servText: "Laudem latine persequeris idsed, ex fabulas delectus quo. No veartiendo abhorreant vituperatoribus." }, 
-  { servIconClass: "fa fa-briefcase service-icon", servHeader: "Header", servText: "Laudem latine persequeris idsed, ex fabulas delectus quo. No veartiendo abhorreant vituperatoribus." }, 
-  { servIconClass: "fa fa-briefcase service-icon", servHeader: "Header", servText: "Laudem latine persequeris idsed, ex fabulas delectus quo. No veartiendo abhorreant vituperatoribus." }, 
-  { servIconClass: "fa fa-briefcase service-icon", servHeader: "Header", servText: "Laudem latine persequeris idsed, ex fabulas delectus quo. No veartiendo abhorreant vituperatoribus." }, 
-  { servIconClass: "fa fa-briefcase service-icon", servHeader: "Header", servText: "Laudem latine persequeris idsed, ex fabulas delectus quo. No veartiendo abhorreant vituperatoribus." }, 
-  { servIconClass: "fa fa-briefcase service-icon", servHeader: "Header", servText: "Laudem latine persequeris idsed, ex fabulas delectus quo. No veartiendo abhorreant vituperatoribus." }, 
+  { servIconClass: "fa fa-briefcase service-icon", servHeader: "Decentralized", servText: "Laudem latine persequeris idsed, ex fabulas delectus quo. No veartiendo abhorreant vituperatoribus." }, 
+  { servIconClass: "fa fa-briefcase service-icon", servHeader: "Immutable", servText: "Laudem latine persequeris idsed, ex fabulas delectus quo. No veartiendo abhorreant vituperatoribus." }, 
+  { servIconClass: "fa fa-briefcase service-icon", servHeader: "Scalable", servText: "Laudem latine persequeris idsed, ex fabulas delectus quo. No veartiendo abhorreant vituperatoribus." }, 
+  // { servIconClass: "fa fa-briefcase service-icon", servHeader: "Header", servText: "Laudem latine persequeris idsed, ex fabulas delectus quo. No veartiendo abhorreant vituperatoribus." }, 
+  // { servIconClass: "fa fa-briefcase service-icon", servHeader: "Header", servText: "Laudem latine persequeris idsed, ex fabulas delectus quo. No veartiendo abhorreant vituperatoribus." }, 
+  // { servIconClass: "fa fa-briefcase service-icon", servHeader: "Header", servText: "Laudem latine persequeris idsed, ex fabulas delectus quo. No veartiendo abhorreant vituperatoribus." }, 
 ];
 
 // upload fiel to firebse store
@@ -47,3 +47,5 @@ export const servicesList = [
 //       url: await fileRef.getDownloadURL(),
 //       createdAt: new Date(),
 //     });
+
+

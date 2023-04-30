@@ -80,6 +80,16 @@
   border-radius: 10px;
 }
 
+.upload-options{
+  display: flex;
+  padding: 7px;
+}
+.cancel{
+  color: red;
+  margin-left: 3px;
+  background-color: white;
+}
+
 .my-btn:hover{
   text-decoration: none;
   background-color: #ffffff;

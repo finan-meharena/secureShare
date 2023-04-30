@@ -4,13 +4,19 @@
 Baseline Grid: 1.5rem 
 Modular Scale: 1:1.33 Perfect Fourth
 --------------------------------------*/
-html{
-    scroll-behavior: smooth;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  -webkit-overflow-scrolling: touch;
 }
 .pending-container {
 	background: #f7f7f7;
 	color: #353535;
 	transition: all ease;
+
 }
 
 .pending-container h1 {
@@ -52,6 +58,7 @@ hr {
 	position: relative;
 	top: 1.5rem;
 	width: 80%;
+	margin-bottom: 7%;
 }
 
 .recent_posts article {
@@ -97,5 +104,25 @@ hr {
 
 .mine-button:hover{
     background-color: blue;
+	transition: all 0.5s ease;
 }
+.mined-button{
+	background-color: rgb(178, 238, 87);
+	transition: all 0.5s ease;
+}
+.pending-container {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+  }
+  
+  .recent_posts {
+	flex: 1;
+  }
+  
+  .footer {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+  }
 
